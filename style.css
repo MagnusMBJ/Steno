@@ -102,12 +102,35 @@
   .reverse {
     animation-name: spin-reverse;
   }
+
+  /* Til zoom-animation */
+  @keyframes zoomInPortal {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(10);
+      opacity: 0;
+    }
+  }
   
-  
+  .zoom-effect {
+    animation: zoomInPortal 1s ease forwards;
+    pointer-events: none;
+  }
   
 
+/* Skjuler sektioner som ikke er aktive */
+.angst-section,
+.depri-section,
+.stress-section {
+  display: none;
+  min-height: 100vh;
+  background: white;
+  padding: 40px;
+}
 
-
-
-  
-  
+.section-active {
+  display: block !important;
+}

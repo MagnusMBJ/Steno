@@ -9,6 +9,8 @@
     overflow: hidden;
   }
   
+
+
   .start-section {
     width: 100vw;
     height: 100vh;
@@ -29,19 +31,83 @@
     font-weight: 100;
     user-select: none;
   }
-  .main-content {
-    display:none;
+
+
+
+  .vælg-cirkel-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
     background-image: url('img/papir.png');
     background-size: cover;
-    height:100vh;
     background-position: center;
     background-repeat: no-repeat;
+    height: 100vh;
   }
-  .main-text {
+  
+  .cirkel-container {
+    position: relative;
+    width: 350px;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .cirkel {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .cirkel-tekst {
+    position: absolute;
+    font-size: 40px;
     font-family: 'Delicious Handrawn';
-    font-size: 128px;
-    color: #000;
+    color: black;
     text-align: center;
-    font-weight: 100;
-    user-select: none;
+    pointer-events: none;
   }
+
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes spin-reverse {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(-360deg);
+    }
+  }
+  
+  .spin-slow {
+    animation: spin 20s linear infinite;
+  }
+  
+  .spin-medium {
+    animation: spin 10s linear infinite;
+  }
+  
+  .spin-fast {
+    animation: spin 8s linear infinite;
+  }
+  
+  .reverse {
+    animation-name: spin-reverse;
+  }
+  
+  
+  
+
+
+
+
+  
+  

@@ -5,7 +5,7 @@ const vælgCirkelSection = document.querySelector('.vælg-cirkel-section');
 
 function hideStartScreen() {
     startSection.style.display = 'none';
-    vælgCirkelSection.style.display = 'flex'; // vi bruger flex i CSS
+    vælgCirkelSection.style.display = 'flex';
 }
 
 startSection.addEventListener('click', hideStartScreen);

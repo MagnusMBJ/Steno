@@ -135,13 +135,7 @@
   display: block !important;
 }
 
-.video-section {
-  position: relative;
-  width: 100vw;
-  height: 90vh;
-  overflow: hidden;
-  background: black;
-}
+
 
 .bg-video {
   position: absolute;
@@ -155,17 +149,32 @@
   pointer-events: none;
 }
 
-#slider-wrapper {
-  display: flex;
-  width: 300vw; /* 3 sections */
-  height: 100vh;
-  transition: transform 1s ease-in-out;
-}
-
 /* Each full-screen slide */
 #slider-wrapper section {
   width: 100vw;
   height: 100vh;
   flex-shrink: 0;
   position: relative;
+}
+
+#slider-wrapper {
+  display: flex;
+  width: 600vw; /* 6 slides */
+  height: 100vh;
+  transition: transform 1s ease-in-out;
+}
+
+.slide-section {
+  width: 100vw;
+  height: 100vh;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.papir-baggrund {
+  background-image: url('../img/papir.png'); /* or adjust path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
 }

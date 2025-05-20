@@ -6,43 +6,57 @@
   <title>Steno Museet</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Delicious+Handrawn&display=swap" rel="stylesheet">
-
+  
 </head>
 <body>
 
   <section class="vælg-cirkel-section">
-    <div class="cirkel-container">
+    <div class="cirkel-container" onclick="enableAudio('angst-video')">
       <img src="img/cirkel.svg" alt="Cirkel 1" class="cirkel spin-slow">
       <p class="cirkel-tekst">Angst</p>
     </div>
-    <div class="cirkel-container">
+    
+    <!-- CIRCLE: Depression -->
+    <div class="cirkel-container" onclick="enableAudio('depression-video')">
       <img src="img/cirkel.svg" alt="Cirkel 2" class="cirkel spin-fast reverse">
       <p class="cirkel-tekst">Depression</p>
     </div>
-    <div class="cirkel-container">
+    
+    <!-- CIRCLE: Stress -->
+    <div class="cirkel-container" onclick="enableAudio('stress-video')">
       <img src="img/cirkel.svg" alt="Cirkel 3" class="cirkel spin-medium">
       <p class="cirkel-tekst">Stress</p>
     </div>
   </section>
 
-  <section class="angst-section">
-    <h1>Angst Sektion</h1>
-  </section>
+
+
+
+
+
+
+  <div id="slider-wrapper">
+    <section class="angst-section">
+      <video id="angst-video" class="bg-video" autoplay muted playsinline>
+        <source src="video/Angst-vid.mp4" type="video/mp4">
+      </video>
+    </section>
   
-<<<<<<< HEAD
-  <section class="depri-section">
-    <h1>Depression Sektion</h1>
-  </section>
+    <section class="depri-section">
+      <video id="depression-video" class="bg-video" autoplay muted playsinline>
+        <source src="video/Depression-vid.mp4" type="video/mp4">
+      </video>
+    </section>
   
-  <section class="stress-section">
-    <h1>Stress Sektion</h1>
-  </section>
-  
-  
+    <section class="stress-section">
+      <video id="stress-video" class="bg-video" autoplay muted playsinline>
+        <source src="video/Stress-vid.mp4" type="video/mp4">
+      </video>
+    </section>
+  </div>
+<script src="slide.js"></script>
+<script src="mainvideo.js"></script>
 <script src="taptostart.js"></script>
 <script src="zoom.js"></script>
-=======
-<script src="taptostart.js"></script>
->>>>>>> f89317332a1a09472d90583a8ec65f1ef71a7e5c
 </body>
 </html>

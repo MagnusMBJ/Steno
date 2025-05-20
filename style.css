@@ -134,3 +134,38 @@
 .section-active {
   display: block !important;
 }
+
+.video-section {
+  position: relative;
+  width: 100vw;
+  height: 90vh;
+  overflow: hidden;
+  background: black;
+}
+
+.bg-video {
+  position: absolute;
+  top: -1%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  height: auto;
+  min-height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+#slider-wrapper {
+  display: flex;
+  width: 300vw; /* 3 sections */
+  height: 100vh;
+  transition: transform 1s ease-in-out;
+}
+
+/* Each full-screen slide */
+#slider-wrapper section {
+  width: 100vw;
+  height: 100vh;
+  flex-shrink: 0;
+  position: relative;
+}

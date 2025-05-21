@@ -276,3 +276,83 @@
   display: block;
   transform: translateX(0);
 }
+
+.fakta-angst {
+    width: 100vw;
+    height: 100vh;
+    padding: 40px 60px;
+    position: relative;
+    background-color: #f6f6f6;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .tilbage-knap {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 50px;
+  }
+  
+  .angst-top {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 140px;
+  }
+  
+  
+  .infoangst {
+    width: 800px;
+    max-width: 100%;
+    flex-shrink: 0;
+  }
+  
+  .angst-punkter {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 40px;
+    max-width: 250px;
+    margin-left: 200px;
+  }
+  
+  .punkt {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  
+  .punkt img {
+    width: 40px;
+    height: auto;
+    margin-top: 5px;
+  }
+  
+  .punkt p {
+    font-size: 18px;
+    line-height: 1.4;
+    margin: 0;
+  }
+  
+  .angst-ikoner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 80px;
+    text-align: center;
+    margin-bottom: 40px;
+    margin-top: 40px;
+  }
+  
+  
+  .ikon-boks img {
+    width: 110px;
+    height: auto;
+  }
+  
+  .ikon-boks p {
+    margin-top: 15px;
+    font-size: 18px;
+    max-width: 220px;
+  }

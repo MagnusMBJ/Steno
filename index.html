@@ -13,61 +13,115 @@
     <h1 class="start-text">Tryk for at starte</h1>
   </section>
 
-  <section class="vælg-cirkel-section">
-    <div class="cirkel-container" onclick="enableAudio('angst-video')">
-      <img src="img/cirkel.svg" alt="Cirkel 1" class="cirkel spin-slow">
-      <p class="cirkel-tekst">Angst</p>
+  <!-- 🔹 CIRKEL MENU (CHOOSE TOPIC) -->
+<section class="vælg-cirkel-section">
+  <div class="cirkel-container" onclick="enableAudio('angst-video', 'fakta-angst')">
+    <img src="img/cirkel.svg" alt="Cirkel 1" class="cirkel spin-slow">
+    <p class="cirkel-tekst">Angst</p>
+  </div>
+
+  <div class="cirkel-container" onclick="enableAudio('depression-video', 'fakta-depression')">
+    <img src="img/cirkel.svg" alt="Cirkel 2" class="cirkel spin-fast reverse">
+    <p class="cirkel-tekst">Depression</p>
+  </div>
+
+  <div class="cirkel-container" onclick="enableAudio('stress-video', 'fakta-stress')">
+    <img src="img/cirkel.svg" alt="Cirkel 3" class="cirkel spin-medium">
+    <p class="cirkel-tekst">Stress</p>
+  </div>
+</section>
+
+<div id="slider-wrapper">
+
+  <!-- 🔸 Angst Video -->
+  <section id="angst-video">
+    <video class="bg-video" autoplay muted playsinline>
+      <source src="video/Angst-vid.mp4" type="video/mp4">
+    </video>
+  </section>
+
+  <!-- 🔹 Fakta Angst -->
+  <section class="fakta-slide papir-baggrund" id="fakta-angst">
+    <div class="fakta-toptekst">
+      <h1 class="fakta-titel">Hvad ville du gøre i denne situation? (Angst)</h1>
+      <p class="fakta-undertekst">
+        Du står foran din klasse. Dit hjerte banker, hænderne sveder,<br>
+        og du glemmer det, du ville sige. Det er din tur til at fremlægge.
+      </p>
     </div>
-    
-    <!-- CIRCLE: Depression -->
-    <div class="cirkel-container" onclick="enableAudio('depression-video')">
-      <img src="img/cirkel.svg" alt="Cirkel 2" class="cirkel spin-fast reverse">
-      <p class="cirkel-tekst">Depression</p>
+    <div class="fakta-container">
+      <img src="img/stickynote.png" class="fakta-note">
+      <p class="fakta-tekst">Løber ud af klassen og aflyser.</p>
     </div>
-    
-    <!-- CIRCLE: Stress -->
-    <div class="cirkel-container" onclick="enableAudio('stress-video')">
-      <img src="img/cirkel.svg" alt="Cirkel 3" class="cirkel spin-medium">
-      <p class="cirkel-tekst">Stress</p>
+    <div class="fakta-container">
+      <img src="img/stickynote.png" class="fakta-note">
+      <p class="fakta-tekst">Trækker vejret dybt og prøver at gennemføre det.</p>
+    </div>
+    <div class="fakta-container">
+      <img src="img/stickynote.png" class="fakta-note">
+      <p class="fakta-tekst">Står stille og håber det går over.</p>
     </div>
   </section>
 
+  <!-- 🔸 Depression Video -->
+  <section id="depression-video">
+    <video class="bg-video" autoplay muted playsinline>
+      <source src="video/Depression-vid.mp4" type="video/mp4">
+    </video>
+  </section>
 
-  <div id="slider-wrapper">
-    <section class="angst-section">
-      <video id="angst-video" class="bg-video" autoplay muted playsinline>
-        <source src="video/Angst-vid.mp4" type="video/mp4">
-      </video>
-    </section>
-  
-    <section class="depri-section">
-      <video id="depression-video" class="bg-video" autoplay muted playsinline>
-        <source src="video/Depression-vid.mp4" type="video/mp4">
-      </video>
-    </section>
-  
-    <section class="stress-section">
-      <video id="stress-video" class="bg-video" autoplay muted playsinline>
-        <source src="video/Stress-vid.mp4" type="video/mp4">
-      </video>
-    </section>
-  
+  <!-- 🔹 Fakta Depression -->
+  <section class="fakta-slide papir-baggrund" id="fakta-depression">
+    <div class="fakta-toptekst">
+      <h1 class="fakta-titel">Hvordan ville du reagere? (Depression)</h1>
+      <p class="fakta-undertekst">
+        Du har ingen energi, og det hele føles meningsløst. Du skal i skole, men du vil bare blive i sengen.
+      </p>
+    </div>
+    <div class="fakta-container">
+      <img src="img/stickynote.png" class="fakta-note">
+      <p class="fakta-tekst">Jeg bliver hjemme og lukker af for verden.</p>
+    </div>
+    <div class="fakta-container">
+      <img src="img/stickynote.png" class="fakta-note">
+      <p class="fakta-tekst">Jeg tvinger mig selv ud, men det er hårdt.</p>
+    </div>
+    <div class="fakta-container">
+      <img src="img/stickynote.png" class="fakta-note">
+      <p class="fakta-tekst">Jeg ringer til en ven eller lærer og beder om hjælp.</p>
+    </div>
+  </section>
 
-    <!-- Fakta 1: After Angst video -->
-    <section class="slide-section papir-baggrund fakta-1">
-    <h1 class="text">Fakta 1 – Angst</h1>
-    </section>
+  <!-- 🔸 Stress Video -->
+  <section id="stress-video">
+    <video class="bg-video" autoplay muted playsinline>
+      <source src="video/Stress-vid.mp4" type="video/mp4">
+    </video>
+  </section>
 
-    <!-- Fakta 2: After Depression video -->
-    <section class="slide-section papir-baggrund fakta-2">
-      <h1 class="text">Fakta 2 – Depression</h1>
-    </section>
+  <!-- 🔹 Fakta Stress -->
+  <section class="fakta-slide papir-baggrund" id="fakta-stress">
+    <div class="fakta-toptekst">
+      <h1 class="fakta-titel">Hvordan håndterer du denne situation? (Stress)</h1>
+      <p class="fakta-undertekst">
+        Du har tre afleveringer, to tests og et fritidsjob. Det hele er for meget.
+      </p>
+    </div>
+    <div class="fakta-container">
+      <img src="img/stickynote.png" class="fakta-note">
+      <p class="fakta-tekst">Jeg ignorerer det og arbejder videre hele natten.</p>
+    </div>
+    <div class="fakta-container">
+      <img src="img/stickynote.png" class="fakta-note">
+      <p class="fakta-tekst">Jeg beder om hjælp og prioriterer opgaverne.</p>
+    </div>
+    <div class="fakta-container">
+      <img src="img/stickynote.png" class="fakta-note">
+      <p class="fakta-tekst">Jeg bliver syg og lægger mig i sengen.</p>
+    </div>
+  </section>
 
-    <!-- Fakta 3: After Stress video -->
-    <section class="slide-section papir-baggrund fakta-3">
-      <h1 class="text">Fakta 3 – Stress</h1>
-    </section>
-  </div>
+</div>
  
 
 <script src="slide.js"></script>

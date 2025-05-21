@@ -4,18 +4,15 @@ function enableAudio(videoId) {
     // Unmute immediately
     video.muted = false;
   
-    // Delay video playback by 1 second (1000 milliseconds)
+    // Delay video playback by 2 seconds
     setTimeout(() => {
       const playPromise = video.play();
   
       if (playPromise !== undefined) {
-        playPromise
-          .then(() => {
-            // playback started
-          })
-          .catch(error => {
-            console.error("Playback error:", error);
-          });
+        playPromise.catch(error => {
+          console.error("Playback error:", error);
+        });
       }
-    }, 1000); // 1000ms = 1 second
+    }, 2000);
   }
+  

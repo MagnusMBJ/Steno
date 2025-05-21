@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const allVideoSections = document.querySelectorAll(".video-section");
-  const notes = document.querySelectorAll(".fakta-container");
+  const containers = document.querySelectorAll(".fakta-container");
 
   notes.forEach(note => {
     note.addEventListener("click", () => {
@@ -13,16 +12,24 @@ document.addEventListener("DOMContentLoaded", () => {
         sec.style.display = "none";
       });
 
-      // Show and slide in the target video section
-      targetSection.style.display = "block";
-      setTimeout(() => {
-        targetSection.classList.add("active");
-      }, 10);
+      // Hide other containers
+      document.querySelectorAll(".fakta-container").forEach(c => {
+        if (c !== container) c.style.display = "none";
+      });
 
-      // Play the video
-      const video = targetSection.querySelector("video");
-      video.currentTime = 0;
-      video.play();
+      // Delay before switch
+      setTimeout(() => {
+        // Hide all sections
+        document.querySelectorAll("section").forEach(sec => {
+          sec.style.display = "none";
+        });
+
+        // Show correct video section and play
+        targetSection.style.display = "block";
+        targetVideo.currentTime = 0;
+        targetVideo.muted = false;
+        targetVideo.play().catch(err => console.error("Playback error:", err));
+      }, 1000); // match animation time
     });
   });
 });

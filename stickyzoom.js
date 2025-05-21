@@ -1,3 +1,4 @@
+"use strict";
 document.addEventListener('DOMContentLoaded', () => {
   const stickyNotes = document.querySelectorAll('.valg-container');
 

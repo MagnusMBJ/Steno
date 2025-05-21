@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const containers = document.querySelectorAll(".fakta-container");
+  const containers = document.querySelectorAll(".valg-container");
 
   containers.forEach(container => {
     container.addEventListener("click", () => {
@@ -22,24 +22,22 @@ document.addEventListener("DOMContentLoaded", () => {
         img.classList.add("zoom-effect");
       }
 
-      // Hide other containers
-      document.querySelectorAll(".fakta-container").forEach(c => {
+      // Skjul andre containere
+      document.querySelectorAll(".valg-container").forEach(c => {
         if (c !== container) c.style.display = "none";
       });
 
-      // Delay before switch
+      // Efter kort ventetid, skift til video
       setTimeout(() => {
-        // Hide all sections
         document.querySelectorAll("section").forEach(sec => {
           sec.style.display = "none";
         });
 
-        // Show correct video section and play
         targetSection.style.display = "block";
         targetVideo.currentTime = 0;
         targetVideo.muted = false;
         targetVideo.play().catch(err => console.error("Playback error:", err));
-      }, 1000); // match animation time
+      }, 1000); // Matcher evt. animationstid
     });
   });
 });

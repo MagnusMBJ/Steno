@@ -1,35 +1,36 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const containers = document.querySelectorAll(".fakta-container");
+document.addEventListener('DOMContentLoaded', () => {
+  const stickyNotes = document.querySelectorAll('.valg-container');
 
-  notes.forEach(note => {
-    note.addEventListener("click", () => {
-      const targetId = note.getAttribute("data-target");
-      const targetSection = document.getElementById(targetId + "-section");
+  stickyNotes.forEach(note => {
+    note.addEventListener('click', () => {
+      const targetVideoId = note.dataset.target;
+      const targetVideo = document.getElementById(targetVideoId);
+      const targetSection = document.getElementById(`${targetVideoId}-section`);
 
-      // Hide all video sections
-      allVideoSections.forEach(sec => {
-        sec.classList.remove("active");
-        sec.style.display = "none";
-      });
+      if (!targetVideo || !targetSection) return;
 
-      // Hide other containers
-      document.querySelectorAll(".fakta-container").forEach(c => {
-        if (c !== container) c.style.display = "none";
-      });
+      // Zoom note (valgfri)
+      note.classList.add('zoom-effect');
 
-      // Delay before switch
+      const valgSlide = note.closest('.valg-slide');
+
+      // Fade hele valg-slide væk
+      valgSlide.style.opacity = '0';
+      valgSlide.style.pointerEvents = 'none';
+
+      // Fjern fra DOM layout lidt efter
       setTimeout(() => {
-        // Hide all sections
-        document.querySelectorAll("section").forEach(sec => {
-          sec.style.display = "none";
-        });
+        valgSlide.style.display = 'none';
+        valgSlide.classList.remove('show');
+      }, 600);
 
-        // Show correct video section and play
-        targetSection.style.display = "block";
+      // Vis og afspil video
+      targetSection.classList.add('active');
+      setTimeout(() => {
         targetVideo.currentTime = 0;
         targetVideo.muted = false;
-        targetVideo.play().catch(err => console.error("Playback error:", err));
-      }, 1000); // match animation time
+        targetVideo.play().catch(err => console.error('Video play error:', err));
+      }, 400);
     });
   });
 });

@@ -32,28 +32,31 @@
   </section>
   
 
-<<!-- 🔸 Video: Angst -->
-<section id="angst-section" class="video-section">
-  <video id="angst-video" class="bg-video" autoplay muted playsinline>
-    <source src="video/Angst-vid.mp4" type="video/mp4">
-  </video>
-</section>
+SLIDER CONTENT (VIDEO + valg) 
 
-<!-- 🔸 Video: Depression -->
-<section id="depression-section" class="video-section">
-  <video id="depression-video" class="bg-video" autoplay muted playsinline>
-    <source src="video/Depression-vid.mp4" type="video/mp4">
-  </video>
-</section>
 
-<!-- 🔸 Video: Stress -->
-<section id="stress-section" class="video-section">
-  <video id="stress-video" class="bg-video" autoplay muted playsinline>
-    <source src="video/Stress-vid.mp4" type="video/mp4">
-  </video>
-</section>
+  <!-- 🔸 Video: Angst -->
+  <section class="angst-section">
+    <video id="angst-video" class="bg-video" autoplay muted playsinline>
+      <source src="video/Angst-vid.mp4" type="video/mp4">
+    </video>
+  </section>
 
-  <!-- 🔹 valg: Angst -->
+  <!-- 🔸 Video: Depression -->
+  <section class="depri-section">
+    <video id="depression-video" class="bg-video" autoplay muted playsinline>
+      <source src="video/Depression-vid.mp4" type="video/mp4">
+    </video>
+  </section>
+
+  <!-- 🔸 Video: Stress -->
+  <section class="stress-section">
+    <video id="stress-video" class="bg-video" autoplay muted playsinline>
+      <source src="video/Stress-vid.mp4" type="video/mp4">
+    </video>
+  </section>
+
+  <!-- 🔹 Valg: Angst -->
 <section class="valg-slide papir-baggrund" id="valg-angst">
   <div class="valg-toptekst">
     <h1 class="valg-titel">Hvad ville du gøre i denne situation? (Angst)</h1>
@@ -63,21 +66,23 @@
     </p>
   </div>
 
-  <div class="valg-container" data-target="video1">
-    <img src="img/stickynote.png" class="valg-note" />
-    <p class="valg-tekst">Løber ud af klassen og aflyser.</p>
-  </div>
-  <div class="valg-container" data-target="video2">
-    <img src="img/stickynote.png" class="valg-note" />
-    <p class="valg-tekst">Trækker vejret dybt og prøver at gennemføre det.</p>
-  </div>
-  <div class="valg-container" data-target="video3">
-    <img src="img/stickynote.png" class="valg-note" />
-    <p class="valg-tekst">Står stille uden at sige noget og venter på at det går over.</p>
+  <div class="valg-container-wrapper">
+    <div class="valg-container" data-target="video1">
+      <img src="img/stickynote.png" class="valg-note" alt="Note 1" />
+      <p class="valg-tekst">Løber ud af klassen og aflyser.</p>
+    </div>
+    <div class="valg-container" data-target="video2">
+      <img src="img/stickynote.png" class="valg-note" alt="Note 2" />
+      <p class="valg-tekst">Trækker vejret dybt og prøver at gennemføre det.</p>
+    </div>
+    <div class="valg-container" data-target="video3">
+      <img src="img/stickynote.png" class="valg-note" alt="Note 3" />
+      <p class="valg-tekst">Står stille uden at sige noget og venter på at det går over.</p>
+    </div>
   </div>
 </section>
 
-<!-- 🔹 Valg Depression -->
+<!-- 🔹 Valg: Depression -->
 <section class="valg-slide papir-baggrund" id="valg-depression">
   <div class="valg-toptekst">
     <h1 class="valg-titel">Hvordan ville du reagere? (Depression)</h1>
@@ -86,21 +91,23 @@
     </p>
   </div>
 
-  <div class="fakta-container" data-target="video4">
-    <img src="img/stickynote.png" alt="Note 4" class="fakta-note">
-    <p class="fakta-tekst">Jeg bliver hjemme og lukker af for verden.</p>
-  </div>
-  <div class="fakta-container" data-target="video5">
-    <img src="img/stickynote.png" alt="Note 5" class="fakta-note">
-    <p class="fakta-tekst">Jeg tvinger mig selv ud, men det er hårdt.</p>
-  </div>
-  <div class="fakta-container" data-target="video6">
-    <img src="img/stickynote.png" alt="Note 6" class="fakta-note">
-    <p class="fakta-tekst">Jeg ringer til en ven eller lærer og beder om hjælp.</p>
+  <div class="valg-container-wrapper">
+    <div class="valg-container" data-target="video4">
+      <img src="img/stickynote.png" class="valg-note" alt="Note 4" />
+      <p class="valg-tekst">Jeg bliver hjemme og lukker af for verden.</p>
+    </div>
+    <div class="valg-container" data-target="video5">
+      <img src="img/stickynote.png" class="valg-note" alt="Note 5" />
+      <p class="valg-tekst">Jeg tvinger mig selv ud, men det er hårdt.</p>
+    </div>
+    <div class="valg-container" data-target="video6">
+      <img src="img/stickynote.png" class="valg-note" alt="Note 6" />
+      <p class="valg-tekst">Jeg ringer til en ven eller lærer og beder om hjælp.</p>
+    </div>
   </div>
 </section>
 
-<!-- 🔹 Valg Stress -->
+<!-- 🔹 Valg: Stress -->
 <section class="valg-slide papir-baggrund" id="valg-stress">
   <div class="valg-toptekst">
     <h1 class="valg-titel">Hvordan håndterer du denne situation? (Stress)</h1>
@@ -109,64 +116,67 @@
     </p>
   </div>
 
-  <div class="fakta-container" data-target="video7">
-    <img src="img/stickynote.png" alt="Note 7" class="fakta-note">
-    <p class="fakta-tekst">Jeg ignorerer det og arbejder videre hele natten.</p>
-  </div>
-  <div class="fakta-container" data-target="video8">
-    <img src="img/stickynote.png" alt="Note 8" class="fakta-note">
-    <p class="fakta-tekst">Jeg beder om hjælp og prioriterer opgaverne.</p>
-  </div>
-  <div class="fakta-container" data-target="video9">
-    <img src="img/stickynote.png" alt="Note 9" class="fakta-note">
-    <p class="fakta-tekst">Jeg bliver syg og lægger mig i sengen.</p>
+  <div class="valg-container-wrapper">
+    <div class="valg-container" data-target="video7">
+      <img src="img/stickynote.png" class="valg-note" alt="Note 7" />
+      <p class="valg-tekst">Jeg ignorerer det og arbejder videre hele natten.</p>
+    </div>
+    <div class="valg-container" data-target="video8">
+      <img src="img/stickynote.png" class="valg-note" alt="Note 8" />
+      <p class="valg-tekst">Jeg beder om hjælp og prioriterer opgaverne.</p>
+    </div>
+    <div class="valg-container" data-target="video9">
+      <img src="img/stickynote.png" class="valg-note" alt="Note 9" />
+      <p class="valg-tekst">Jeg bliver syg og lægger mig i sengen.</p>
+    </div>
   </div>
 </section>
+
 
 <!-- 🔸 VIDEO SECTIONS (1–9) -->
 <section class="video-section" id="video1-section">
   <video id="video1" class="bg-video" muted playsinline>
-    <source src="video/(Angstv1).mp4" type="video/mp4" />
+    <source src="video/angstv1.mp4" type="video/mp4" />
   </video>
 </section>
 <section class="video-section" id="video2-section">
   <video id="video2" class="bg-video" muted playsinline>
-    <source src="video/(angstv2).mp4" type="video/mp4" />
+    <source src="video/angstv2.mp4" type="video/mp4" />
   </video>
 </section>
 <section class="video-section" id="video3-section">
   <video id="video3" class="bg-video" muted playsinline>
-    <source src="video/(angstv3).mp4" type="video/mp4" />
+    <source src="video/angstv3.mp4" type="video/mp4" />
   </video>
 </section>
 <section class="video-section" id="video4-section">
   <video id="video4" class="bg-video" muted playsinline>
-    <source src="video/(depressionv1).mp4" type="video/mp4" />
+    <source src="video/depressionv1.mp4" type="video/mp4" />
   </video>
 </section>
 <section class="video-section" id="video5-section">
   <video id="video5" class="bg-video" muted playsinline>
-    <source src="video/(depressionv2).mp4" type="video/mp4" />
+    <source src="video/depressionv2.mp4" type="video/mp4" />
   </video>
 </section>
 <section class="video-section" id="video6-section">
   <video id="video6" class="bg-video" muted playsinline>
-    <source src="video/(depressionv3).mp4" type="video/mp4" />
+    <source src="video/depressionv3.mp4" type="video/mp4" />
   </video>
 </section>
 <section class="video-section" id="video7-section">
   <video id="video7" class="bg-video" muted playsinline>
-    <source src="video/(stressv1).mp4" type="video/mp4" />
+    <source src="video/stressv1.mp4" type="video/mp4" />
   </video>
 </section>
 <section class="video-section" id="video8-section">
   <video id="video8" class="bg-video" muted playsinline>
-    <source src="video/(stressv2).mp4" type="video/mp4" />
+    <source src="video/stressv2.mp4" type="video/mp4" />
   </video>
 </section>
 <section class="video-section" id="video9-section">
   <video id="video9" class="bg-video" muted playsinline>
-    <source src="video/(stressv3).mp4" type="video/mp4" />
+    <source src="video/stressv3.mp4" type="video/mp4" />
   </video>
 </section>
 

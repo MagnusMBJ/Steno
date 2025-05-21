@@ -155,32 +155,81 @@
 
 
 
-.papir-baggrund {
-  background-image: url('../img/papir.png'); /* or adjust path */
+.valg-slide {
+  position: absolute; /* eller fixed hvis det skal ligge øverst */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+  padding: 60px 40px 40px;
+  opacity: 0;
+  pointer-events: none;
+  background-image: url('img/papir.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  
+  transition: opacity 0.8s ease;
+  z-index: 1000; /* Sørg for at det ligger over alt andet */
 }
 
-.valg-slide {
+.valg-slide.show {
+  display: flex;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Toptekst – overskrift og undertekst */
+.valg-toptekst {
+  max-width: 900px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 1s ease;
+  user-select: none;
+}
+
+.valg-toptekst.visible {
+  opacity: 1;
+}
+
+.valg-titel {
+  font-size: 2.8rem;
+  font-family: 'Delicious Handrawn', sans-serif;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.valg-undertekst {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #222;
+  font-family: 'Delicious Handrawn', sans-serif;
+}
+
+/* Sticky note layout */
+.valg-container-wrapper {
   display: flex;
   justify-content: center;
-  align-items: center;
-  gap: 40px;
-  height: 100vh;
-  background-color: #f0f0f0;
   flex-wrap: wrap;
-  padding: 40px;
+  gap: 40px;
+  margin-top: 40px;
 }
 
 .valg-container {
   position: relative;
-  width: 300px;
-  height: 300px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 250px;
+  height: 250px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.valg-slide.show .valg-container {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .valg-note {
@@ -192,7 +241,7 @@
 
 .valg-tekst {
   position: absolute;
-  top: 50%;
+  top: 52%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
@@ -202,58 +251,28 @@
   padding: 10px;
   max-width: 80%;
   z-index: 1;
-  font-family: 'Delicious Handrawn';
+  font-family: 'Delicious Handrawn', sans-serif;
   user-select: none;
 }
 
-.valg-toptekst {
-  position: absolute;
-  top: 40px;
-  width: 100%;
-  text-align: center;
-  z-index: 2;
-  user-select: none;
-  opacity: 0;
-  transition: opacity 1s ease;
-}
 
-  
-}
-.valg-toptekst.visible {
-  opacity: 1;
-}
-
-.valg-titel {
-  font-size: 2.8rem;
-  margin-bottom: 10px;
-  font-weight: bold;
-  font-family: 'Delicious Handrawn';
-  user-select: none;
-}
-
-.valg-undertekst {
-  font-size: 1.2rem;
-  line-height: 1.6;
-  color: #333;
-  font-family: 'Delicious Handrawn';
-<<<<<<< HEAD
-}
 
 .video-section {
   display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1001;
   transform: translateX(100vw);
   transition: transform 0.6s ease;
+  overflow: hidden;
+  background-color: black; /* fallback, hvis video loader langsomt */
 }
 
+/* Når aktiv: skub ind på skærmen */
 .video-section.active {
   display: block;
   transform: translateX(0);
 }
-
-=======
-  user-select: none;
-}
-<<<<<<< HEAD
->>>>>>> 3bbe7412dd7623e976444d9089c01797825c3294
-=======
->>>>>>> b22a8b6dade1b5c50bb580a358981cb9b13bce51

@@ -1,25 +1,40 @@
-const videoToValgMap = [
-  { videoId: 'angst-video', targetSectionId: 'valg-angst' },
-  { videoId: 'depression-video', targetSectionId: 'valg-depression' },
-  { videoId: 'stress-video', targetSectionId: 'valg-stress' },
-];
+document.addEventListener('DOMContentLoaded', function () {
+  const setups = [
+    { videoId: 'angst-video', videoSectionClass: 'angst-section', valgSectionId: 'valg-angst' },
+    { videoId: 'depression-video', videoSectionClass: 'depri-section', valgSectionId: 'valg-depression' },
+    { videoId: 'stress-video', videoSectionClass: 'stress-section', valgSectionId: 'valg-stress' }
+  ];
 
-videoToValgMap.forEach(({ videoId, targetSectionId }) => {
-  const video = document.getElementById(videoId);
-  const targetSection = document.getElementById(targetSectionId);
+  setups.forEach(({ videoId, videoSectionClass, valgSectionId }) => {
+    const video = document.getElementById(videoId);
+    const videoSection = document.querySelector(`.${videoSectionClass}`);
+    const valgSection = document.getElementById(valgSectionId);
+    const topText = valgSection.querySelector('.valg-toptekst');
 
-  if (video && targetSection) {
+    // Start med at skjule valg-sektion
+    valgSection.classList.remove('show');
+    topText.classList.remove('visible');
+
+    // Debug: Vis om video slutter
     video.addEventListener('ended', () => {
-      // Scroll to target
-      targetSection.scrollIntoView({ behavior: 'smooth' });
+      console.log(`✔ Video "${videoId}" ended`);
 
-      // Reveal text (after small delay to allow scroll to finish)
+      // Skjul videoens sektion
+      if (videoSection) {
+        videoSection.style.opacity = '0';
+        videoSection.style.pointerEvents = 'none';
+        setTimeout(() => {
+          videoSection.style.display = 'none';
+        }, 500); // Give fade tid til at virke
+      }
+
+      // Vis valg-sektion
+      valgSection.classList.add('show');
+
+      // Fade tekst ind lidt efter
       setTimeout(() => {
-        const topText = targetSection.querySelector('.valg-toptekst');
-        if (topText) {
-          topText.classList.add('visible');
-        }
-      }, 1000); // Adjust delay if needed
+        topText.classList.add('visible');
+      }, 300);
     });
-  }
+  });
 });

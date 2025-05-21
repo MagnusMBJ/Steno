@@ -1,17 +1,25 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const slider = document.getElementById("slider-wrapper");
-    const sections = Array.from(slider.querySelectorAll("section"));
-  
-    document.querySelectorAll("video").forEach(video => {
-      video.addEventListener("ended", () => {
-        const currentSection = video.closest("section");
-        const currentIndex = sections.indexOf(currentSection);
-        const nextIndex = currentIndex + 1;
-  
-        if (nextIndex < sections.length) {
-          slider.style.transform = `translateX(${-100 * nextIndex}vw)`;
+const videoToValgMap = [
+  { videoId: 'angst-video', targetSectionId: 'valg-angst' },
+  { videoId: 'depression-video', targetSectionId: 'valg-depression' },
+  { videoId: 'stress-video', targetSectionId: 'valg-stress' },
+];
+
+videoToValgMap.forEach(({ videoId, targetSectionId }) => {
+  const video = document.getElementById(videoId);
+  const targetSection = document.getElementById(targetSectionId);
+
+  if (video && targetSection) {
+    video.addEventListener('ended', () => {
+      // Scroll to target
+      targetSection.scrollIntoView({ behavior: 'smooth' });
+
+      // Reveal text (after small delay to allow scroll to finish)
+      setTimeout(() => {
+        const topText = targetSection.querySelector('.valg-toptekst');
+        if (topText) {
+          topText.classList.add('visible');
         }
-      });
+      }, 1000); // Adjust delay if needed
     });
-  });
-  
+  }
+});

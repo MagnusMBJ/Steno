@@ -151,27 +151,7 @@
   pointer-events: none;
 }
 
-/* Each full-screen slide */
-#slider-wrapper section {
-  width: 100vw;
-  height: 100vh;
-  flex-shrink: 0;
-  position: relative;
-}
 
-#slider-wrapper {
-  display: flex;
-  width: 600vw; /* 6 slides */
-  height: 100vh;
-  transition: transform 1s ease-in-out;
-}
-
-.slide-section {
-  width: 100vw;
-  height: 100vh;
-  flex-shrink: 0;
-  position: relative;
-}
 
 
 
@@ -233,6 +213,14 @@
   text-align: center;
   z-index: 2;
   user-select: none;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+  
+}
+.valg-toptekst.visible {
+  opacity: 1;
 }
 
 .valg-titel {

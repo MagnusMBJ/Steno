@@ -171,6 +171,8 @@
   position: relative;
 }
 
+
+
 .papir-baggrund {
   background-image: url('../img/papir.png'); /* or adjust path */
   background-size: cover;

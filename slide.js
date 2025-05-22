@@ -1,4 +1,5 @@
 "use strict";
+
 document.addEventListener('DOMContentLoaded', function () {
   const setups = [
     { videoId: 'angst-video', videoSectionClass: 'angst-section', valgSectionId: 'valg-angst' },
@@ -12,12 +13,14 @@ document.addEventListener('DOMContentLoaded', function () {
     const valgSection = document.getElementById(valgSectionId);
     const topText = valgSection.querySelector('.valg-toptekst');
 
+    // Fjern visning af valg-sektionen og top-tekst ved start
     valgSection.classList.remove('show');
     topText.classList.remove('visible');
 
     video.addEventListener('ended', () => {
       console.log(`✔ Video "${videoId}" ended`);
 
+      // Skjul video-sektionen og vis valg-sektionen
       if (videoSection) {
         videoSection.style.opacity = '0';
         videoSection.style.pointerEvents = 'none';
@@ -28,6 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       valgSection.classList.add('show');
 
+      // Vis top-tekst efter 300ms
       setTimeout(() => {
         topText.classList.add('visible');
       }, 300);

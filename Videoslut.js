@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   function showFaktaSection(sectionClass) {
-    // Fjern alle tidligere aktive fakta-sektioner
+  
     document.querySelectorAll(".fakta-sektion").forEach((section) => {
       section.classList.remove("active");
       section.style.display = "none";
@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
       target.classList.add("active");
       console.log(`Viser sektion: ${sectionClass}`);
 
-      // Vis pil
+
       document.querySelector(".tilbage-knap").style.display = "block";
     } else {
       console.warn(`Sektion ikke fundet: ${sectionClass}`);
@@ -40,7 +40,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  //  Tilbage-knappen funktion
   const tilbageKnap = document.querySelector(".tilbage-knap");
   const startSection = document.querySelector(".vælg-cirkel-section");
 
@@ -50,19 +49,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (tilbageKnap) {
 tilbageKnap.addEventListener('click', () => {
-  // Skjul alle sektioner
+
   document.querySelectorAll('section').forEach(sec => {
     sec.classList.remove('active', 'section-active', 'show');
     sec.style.display = 'none';
   });
 
-  // Nulstil zoomede cirkler og vis dem igen
   const cirkelContainers = document.querySelectorAll(".cirkel-container");
   cirkelContainers.forEach(container => {
     const cirkel = container.querySelector(".cirkel");
     const tekst = container.querySelector(".cirkel-tekst");
 
-    // Reset styles
     cirkel.style.position = "";
     cirkel.style.left = "";
     cirkel.style.top = "";
@@ -71,17 +68,14 @@ tilbageKnap.addEventListener('click', () => {
     cirkel.style.zIndex = "";
     cirkel.classList.remove("zoom-effect");
 
-    // Reset display
     container.style.display = "flex";
     if (tekst) tekst.style.display = "block";
   });
 
-  // Vis start-section igen
   if (startSection) {
     startSection.style.display = 'flex';
     startSection.classList.add('active');
   }
-      // Stop og nulstil alle videoer
       document.querySelectorAll("video").forEach((video) => {
         video.pause();
         video.currentTime = 0;

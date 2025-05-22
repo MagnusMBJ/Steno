@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (!targetVideo || !targetSection) return;
 
-      // Zoom effekt
       note.classList.add('zoom-effect');
       const valgSlide = note.closest('.valg-slide');
       valgSlide.style.opacity = '0';
@@ -21,7 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
         valgSlide.classList.remove('show');
       }, 600);
 
-      // Vis video og afspil
       targetSection.classList.add('active');
       targetVideo.currentTime = 0;
       targetVideo.muted = false;
@@ -34,14 +32,11 @@ document.addEventListener('DOMContentLoaded', () => {
           .catch(error => console.error('Video play error:', error));
       }
 
-      // Tilføj ended event HVER GANG video starter
       targetVideo.onended = () => {
-        console.log(`✅ Video ${targetVideoId} ended`);
+        console.log(` Video ${targetVideoId} ended`);
 
-        // Fjern video-sektion
         targetSection.classList.remove('active');
 
-        // Vis tilhørende fakta-sektion
         if (['video1', 'video2', 'video3'].includes(targetVideoId)) {
           showFakta('fakta-angst');
         } else if (['video4', 'video5', 'video6'].includes(targetVideoId)) {
@@ -53,7 +48,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Hjælpefunktion til at vise fakta
   function showFakta(sectionClass) {
     document.querySelectorAll('.fakta-sektion').forEach(sec => {
       sec.classList.remove('active');
@@ -62,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (el) {
       el.classList.add('active');
       el.scrollIntoView({ behavior: 'smooth' });
-      console.log(`📘 Viser sektion: ${sectionClass}`);
+      console.log(` Viser sektion: ${sectionClass}`);
     } else {
       console.warn(`⚠️ Sektion ikke fundet: ${sectionClass}`);
     }

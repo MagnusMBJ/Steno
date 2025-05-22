@@ -104,7 +104,6 @@
     animation-name: spin-reverse;
   }
 
-  /* Til zoom-animation */
   @keyframes zoomInPortal {
     0% {
       transform: scale(1);
@@ -121,8 +120,6 @@
     pointer-events: none;
   }
   
-
-/* Skjuler sektioner som ikke er aktive */
 .angst-section,
 .depri-section,
 .stress-section {
@@ -159,7 +156,7 @@
 
 
 .valg-slide {
-  position: absolute; /* eller fixed hvis det skal ligge øverst */
+  position: absolute;
   top: 0;
   left: 0;
   width: 100vw;
@@ -176,7 +173,7 @@
   background-position: center;
   background-repeat: no-repeat;
   transition: opacity 0.8s ease;
-  z-index: 1000; /* Sørg for at det ligger over alt andet */
+  z-index: 1000;
 }
 
 .valg-slide.show {
@@ -185,7 +182,6 @@
   pointer-events: auto;
 }
 
-/* Toptekst – overskrift og undertekst */
 .valg-toptekst {
   max-width: 900px;
   text-align: center;
@@ -210,7 +206,6 @@
   color: #222;
 }
 
-/* Sticky note layout */
 .valg-container-wrapper {
   display: flex;
   justify-content: center;
@@ -268,10 +263,9 @@
   transform: translateX(100vw);
   transition: transform 0.6s ease;
   overflow: hidden;
-  background-color: black; /* fallback, hvis video loader langsomt */
+  background-color: black;
 }
 
-/* Når aktiv: skub ind på skærmen */
 .video-section.active {
   display: block;
   transform: translateX(0);
@@ -282,7 +276,7 @@
   height: 100vh;
   padding: 60px;
   position: relative;
-  background-image: url('img/papir.png'); /* ← din papir-baggrund */
+  background-image: url('img/papir.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -294,7 +288,6 @@
   overflow-y: auto;
   opacity: 0;
   display: none;
-  /* Fjern overgang for blød fade */
   transition: none;
 }
 
@@ -381,7 +374,6 @@
   text-align: center;
 }
 
-/* Fixed box for icon + text */
 .ikon-boks {
   width: 200px;
   display: flex;
@@ -390,7 +382,6 @@
   text-align: center;
 }
 
-/* Fixed height wrapper for image */
 .icon-wrapper {
   height: 100px;
   display: flex;
@@ -399,14 +390,12 @@
   margin-bottom: 10px;
 }
 
-/* Image scales to fit wrapper */
 .ikon-boks img {
   max-height: 100%;
   max-width: 100%;
   object-fit: contain;
 }
 
-/* Text under icon */
 .ikon-boks p {
   font-size: 18px;
   line-height: 1.4;

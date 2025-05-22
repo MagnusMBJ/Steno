@@ -1,4 +1,3 @@
-"use strict";
 document.addEventListener('DOMContentLoaded', () => {
   function showFaktaSection(sectionClass) {
     // Fjern alle tidligere aktive fakta-sektioner
@@ -41,9 +40,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 🔙 Tilbage-knappen funktion
+  //  Tilbage-knappen funktion
   const tilbageKnap = document.querySelector('.tilbage-knap');
-  const startSection = document.querySelector('.start-section');
+  const startSection = document.querySelector('.vælg-cirkel-section');
 
   if (tilbageKnap) {
     tilbageKnap.addEventListener('click', () => {

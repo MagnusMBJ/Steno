@@ -6,30 +6,30 @@
   <title>Steno Museet</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Delicious+Handrawn&display=swap" rel="stylesheet">
-  
 </head>
 <body>
+  <!-- Start Section -->
   <section class="start-section">
     <h1 class="start-text">Tryk for at starte</h1>
   </section>
 
+  <!-- Cirkel Selection Section -->
   <section class="vælg-cirkel-section">
     <div class="cirkel-container" onclick="startTopic('angst-video')">
       <img src="img/cirkel.svg" alt="Cirkel 1" class="cirkel spin-slow">
       <p class="cirkel-tekst">Angst</p>
     </div>
-  
     <div class="cirkel-container" onclick="startTopic('depression-video')">
       <img src="img/cirkel.svg" alt="Cirkel 2" class="cirkel spin-fast reverse">
       <p class="cirkel-tekst">Depression</p>
     </div>
-  
     <div class="cirkel-container" onclick="startTopic('stress-video')">
       <img src="img/cirkel.svg" alt="Cirkel 3" class="cirkel spin-medium">
       <p class="cirkel-tekst">Stress</p>
     </div>
   </section>
   
+  <!-- Video Sections for Each Topic -->
   <section class="angst-section">
     <video id="angst-video" class="bg-video" autoplay muted playsinline>
       <source src="video/Angst-vid.mp4" type="video/mp4">
@@ -48,6 +48,7 @@
     </video>
   </section>
 
+  <!-- Selection Slide for Angst -->
   <section class="valg-slide papir-baggrund" id="valg-angst">
     <div class="valg-toptekst">
       <h1 class="valg-titel">Hvad ville du gøre i denne situation? (Angst)</h1>
@@ -56,7 +57,6 @@
         og du glemmer det, du ville sige. Det er din tur til at fremlægge.
       </p>
     </div>
-
     <div class="valg-container-wrapper">
       <div class="valg-container" data-target="video1">
         <img src="img/stickynote.png" class="valg-note" alt="Note 1" />
@@ -73,6 +73,7 @@
     </div>
   </section>
 
+  <!-- Selection Slide for Depression -->
   <section class="valg-slide papir-baggrund" id="valg-depression">
     <div class="valg-toptekst">
       <h1 class="valg-titel">Hvordan ville du reagere? (Depression)</h1>
@@ -80,7 +81,6 @@
         Du har ingen energi, og det hele føles meningsløst. Du skal i skole, men du vil bare blive i sengen.
       </p>
     </div>
-
     <div class="valg-container-wrapper">
       <div class="valg-container" data-target="video4">
         <img src="img/stickynote.png" class="valg-note" alt="Note 4" />
@@ -88,15 +88,16 @@
       </div>
       <div class="valg-container" data-target="video5">
         <img src="img/stickynote.png" class="valg-note" alt="Note 5" />
-        <p class="valg-tekst">Jeg tvinger mig selv ud, men det er hårdt.</p>
+        <p class="valg-tekst">Snakker med dine forældre om det</p>
       </div>
       <div class="valg-container" data-target="video6">
         <img src="img/stickynote.png" class="valg-note" alt="Note 6" />
-        <p class="valg-tekst">Jeg ringer til en ven eller lærer og beder om hjælp.</p>
+        <p class="valg-tekst">Scoller på TikTok og prøver at distrahere dig selv</p>
       </div>
     </div>
   </section>
 
+  <!-- Selection Slide for Stress -->
   <section class="valg-slide papir-baggrund" id="valg-stress">
     <div class="valg-toptekst">
       <h1 class="valg-titel">Hvordan håndterer du denne situation? (Stress)</h1>
@@ -104,7 +105,6 @@
         Du har tre afleveringer, to tests og et fritidsjob. Det hele er for meget.
       </p>
     </div>
-
     <div class="valg-container-wrapper">
       <div class="valg-container" data-target="video7">
         <img src="img/stickynote.png" class="valg-note" alt="Note 7" />
@@ -112,15 +112,16 @@
       </div>
       <div class="valg-container" data-target="video8">
         <img src="img/stickynote.png" class="valg-note" alt="Note 8" />
-        <p class="valg-tekst">Jeg beder om hjælp og prioriterer opgaverne.</p>
+        <p class="valg-tekst">Du råber “Gider I ikke bare lade mig være?!” og smækker døren </p>
       </div>
       <div class="valg-container" data-target="video9">
         <img src="img/stickynote.png" class="valg-note" alt="Note 9" />
-        <p class="valg-tekst">Jeg bliver syg og lægger mig i sengen.</p>
+        <p class="valg-tekst">Laver en liste og beder om hjælp</p>
       </div>
     </div>
   </section>
 
+  <!-- Video Sections for Each Choice -->
   <section class="video-section" id="video1-section">
     <video id="video1" class="bg-video" muted playsinline>
       <source src="video/angstv1.mp4" type="video/mp4" />
@@ -167,16 +168,15 @@
     </video>
   </section>
 
+  <!-- Fakta Sections for Each Topic -->
   <section class="fakta-sektion fakta-angst">
     <div class="fakta-indhold-wrapper">
-
       <div class="fakta-top">
         <div class="fakta-tekst-boks">
           <p><strong>Angst kan være overvældende.</strong><br>
           Man kan opleve svedige hænder, hjertebanken og frygt for at fejle – særligt i pressede situationer.<br>
           Det kan være svært at stå i det, men det er muligt at overvinde angst med støtte og viden.</p>
         </div>
-
         <div class="fakta-punkter">
           <div class="punkt">
             <img src="img/grøncirkel.png" alt="">
@@ -192,7 +192,6 @@
           </div>
         </div>
       </div>
-
       <div class="fakta-ikoner">
         <div class="ikon-boks">
           <div class="icon-wrapper">
@@ -213,20 +212,18 @@
           <p>Angst kan føre til undgåelsesadfærd</p>
         </div>
       </div>
-
     </div>
   </section>
 
+  <!-- Fakta Section for Depression -->
   <section class="fakta-sektion fakta-depri">
     <div class="fakta-indhold-wrapper">
-
       <div class="fakta-top">
         <div class="fakta-tekst-boks">
           <p><strong>Nogle gange kan livet føles trist og svært.</strong><br>
           Man føler sig nede, træt og oplever <u>manglende lyst</u> til at lave noget.<br>
           Det kan påvirke både dit sind og din krop, men der er hjælp at få, og det kan gøre en kæmpe forskel at tale med nogen om det.</p>
         </div>
-
         <div class="fakta-punkter">
           <div class="punkt">
             <img src="img/grøncirkel.png" alt="">
@@ -242,7 +239,6 @@
           </div>
         </div>
       </div>
-
       <div class="fakta-ikoner">
         <div class="ikon-boks">
           <div class="icon-wrapper">
@@ -263,20 +259,18 @@
           <p>Man trækker sig ofte fra sociale relationer</p>
         </div>
       </div>
-
     </div>
   </section>
 
+  <!-- Fakta Section for Stress -->
   <section class="fakta-sektion fakta-stress">
     <div class="fakta-indhold-wrapper">
-
       <div class="fakta-top">
         <div class="fakta-tekst-boks">
           <p><strong>Stress opstår, når kravene overstiger det, vi føler, vi kan klare.</strong><br>
           Det påvirker både kroppen og hjernen, og det er vigtigt at reagere på signalerne.<br>
           Med pauser, struktur og støtte kan man komme tilbage i balance.</p>
         </div>
-
         <div class="fakta-punkter">
           <div class="punkt">
             <img src="img/grøncirkel.png" alt="">
@@ -292,7 +286,6 @@
           </div>
         </div>
       </div>
-
       <div class="fakta-ikoner">
         <div class="ikon-boks">
           <div class="icon-wrapper">
@@ -313,20 +306,19 @@
           <p>Kronisk træthed og udmattelse er typiske tegn</p>
         </div>
       </div>
-
     </div>
   </section>
 
+  <!-- Back Button -->
   <a href="index.html">
     <img src="img/piltilbage.png" alt="Tilbage" class="tilbage-knap">
   </a>
-  
 
-  <script src="mainvideo.js"></script>
-  <script src="slide.js"></script>
-  <script src="zoom.js"></script>
-  <script src="taptostart.js"></script>
-  <script src="videoslut.js"></script>
-  <script src="stickyzoom.js"></script>
+  <script src="mainvideo.js" defer></script>
+  <script src="slide.js" defer></script>
+  <script src="zoom.js" defer></script>
+  <script src="taptostart.js" defer></script>
+  <script src="videoslut.js"defer></script>
+  <script src="stickyzoom.js"defer></script>
 </body>
 </html>

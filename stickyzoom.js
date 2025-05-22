@@ -1,4 +1,5 @@
 "use strict";
+
 document.addEventListener('DOMContentLoaded', () => {
   const stickyNotes = document.querySelectorAll('.valg-container');
 
@@ -8,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const targetVideo = document.getElementById(targetVideoId);
       const targetSection = document.getElementById(`${targetVideoId}-section`);
 
+      // Hvis videoen eller sektionen ikke findes, gør ikke noget
       if (!targetVideo || !targetSection) return;
 
       note.classList.add('zoom-effect');
@@ -15,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
       valgSlide.style.opacity = '0';
       valgSlide.style.pointerEvents = 'none';
 
+      // Skjul valg-slide
       setTimeout(() => {
         valgSlide.style.display = 'none';
         valgSlide.classList.remove('show');
@@ -25,6 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
       targetVideo.muted = false;
       targetVideo.load();
 
+      // Forsøg at afspille videoen og log fejl, hvis der er nogen
       const playPromise = targetVideo.play();
       if (playPromise !== undefined) {
         playPromise
@@ -32,9 +36,9 @@ document.addEventListener('DOMContentLoaded', () => {
           .catch(error => console.error('Video play error:', error));
       }
 
+      // Når videoen er færdig, fjern aktiv sektion og vis fakta
       targetVideo.onended = () => {
         console.log(` Video ${targetVideoId} ended`);
-
         targetSection.classList.remove('active');
 
         if (['video1', 'video2', 'video3'].includes(targetVideoId)) {
@@ -47,18 +51,4 @@ document.addEventListener('DOMContentLoaded', () => {
       };
     });
   });
-
-  function showFakta(sectionClass) {
-    document.querySelectorAll('.fakta-sektion').forEach(sec => {
-      sec.classList.remove('active');
-    });
-    const el = document.querySelector(`.${sectionClass}`);
-    if (el) {
-      el.classList.add('active');
-      el.scrollIntoView({ behavior: 'smooth' });
-      console.log(` Viser sektion: ${sectionClass}`);
-    } else {
-      console.warn(`⚠️ Sektion ikke fundet: ${sectionClass}`);
-    }
-  }
 });

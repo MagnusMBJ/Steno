@@ -282,26 +282,28 @@
   height: 100vh;
   padding: 60px;
   position: relative;
-  background-image: url('img/papir.png'); /* ← din papir-baggrund */
+  background-image: url('img/papir.png'); /* Papir-baggrund */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  display: flex;
+
+  display: none; /* Starter skjult */
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+
   box-sizing: border-box;
   overflow-y: auto;
+
   opacity: 0;
-  display: none;
-  /* Fjern overgang for blød fade */
-  transition: none;
+  transition: opacity 0.6s ease; /* Gør fade mulig */
 }
 
 .fakta-sektion.active {
   display: flex;
   opacity: 1;
 }
+
 .fakta-indhold-wrapper {
   display: flex;
   flex-direction: column;

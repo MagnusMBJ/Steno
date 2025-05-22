@@ -12,13 +12,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const tekst = container.querySelector(".cirkel-tekst");
 
     container.addEventListener("click", () => {
-      // Fjern teksten på den valgte cirkel
+
       if (tekst) tekst.style.display = "none";
 
-      // Find position og størrelse
       const rect = cirkel.getBoundingClientRect();
 
-      // Lås cirklen fast
       cirkel.style.position = "fixed";
       cirkel.style.left = `${rect.left}px`;
       cirkel.style.top = `${rect.top}px`;
@@ -26,14 +24,12 @@ document.addEventListener("DOMContentLoaded", () => {
       cirkel.style.height = `${rect.height}px`;
       cirkel.style.zIndex = "10";
 
-      // Fjern de andre cirkler og tekster
       cirkelContainers.forEach((otherContainer, otherIndex) => {
         if (otherIndex !== index) {
           otherContainer.style.display = "none";
         }
       });
 
-      // Stop rotation
       cirkel.classList.remove(
         "spin-slow",
         "spin-medium",
@@ -41,10 +37,8 @@ document.addEventListener("DOMContentLoaded", () => {
         "reverse"
       );
 
-      // Start zoom
       cirkel.classList.add("zoom-effect");
 
-      // Efter zoom: vis sektionen
       setTimeout(() => {
         document.querySelector(".vælg-cirkel-section").style.display = "none";
 

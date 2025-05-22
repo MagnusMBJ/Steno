@@ -4,7 +4,6 @@ let selectedVideoId = null;
 function enableAudio(videoId) {
   selectedVideoId = videoId;
 
-  // Stop all other videos
   document.querySelectorAll("video").forEach(v => {
     v.pause();
     v.currentTime = 0;
@@ -32,13 +31,11 @@ function startTopic(topic) {
     stress: '.stress-section'
   };
 
-  // Hide all topic sections
   Object.values(sections).forEach(sel => {
     const sec = document.querySelector(sel);
     if (sec) sec.style.display = 'none';
   });
 
-  // Show selected section
   const selectedSection = document.querySelector(sections[topic]);
   if (selectedSection) {
     selectedSection.style.display = 'block';
@@ -52,14 +49,12 @@ function startTopic(topic) {
   }
 }
 document.querySelector('.tilbage-knap').addEventListener('click', () => {
-  // Show the cirkel menu again
+
   document.querySelector('.vælg-cirkel-section').style.display = 'flex';
 
-  // Hide all sections except last topic video
   document.querySelectorAll('.angst-section, .depri-section, .stress-section, .valg-slide, .video-section, .fakta-sektion')
     .forEach(sec => sec.style.display = 'none');
 
-  // Resume last topic video
   const lastTopic = sessionStorage.getItem('lastTopic');
   const sections = {
     angst: '.angst-section',

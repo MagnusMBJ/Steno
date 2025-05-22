@@ -136,7 +136,11 @@
   display: block !important;
 }
 
-
+.fade-out {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
 
 .bg-video {
   position: absolute;

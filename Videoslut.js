@@ -1,3 +1,4 @@
+"use strict";
 document.addEventListener('DOMContentLoaded', () => {
   function showFaktaSection(sectionClass) {
     // Fjern alle tidligere aktive fakta-sektioner

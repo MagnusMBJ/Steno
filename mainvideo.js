@@ -1,3 +1,4 @@
+"use strict";
 let selectedVideoId = null;
 
 function enableAudio(videoId) {

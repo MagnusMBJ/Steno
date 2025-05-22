@@ -1,3 +1,4 @@
+"use strict";
 document.addEventListener("DOMContentLoaded", () => {
     const cirkelContainers = document.querySelectorAll(".cirkel-container");
     const sections = {

@@ -1,3 +1,4 @@
+"use strict";
 document.addEventListener('DOMContentLoaded', function () {
   const setups = [
     { videoId: 'angst-video', videoSectionClass: 'angst-section', valgSectionId: 'valg-angst' },

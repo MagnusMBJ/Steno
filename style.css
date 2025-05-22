@@ -320,20 +320,38 @@
 }
 
 .fakta-tekst-boks {
+  position: absolute;
+  right: 28%;
   background-color: #f08080;
-  padding: 30px;
+  padding: 10px;
   border-radius: 10px;
-  max-width: 600px;
-  font-size: 20px;
+  max-width: 922px;
+  height: 274px;
+  font-size: 35px;
   line-height: 1.5;
   color: black;
 }
 
 .fakta-punkter {
+  position: absolute;
+  top: 10%;
+  left: 77%;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 50px;
   max-width: 300px;
+}
+.fakta-punkter p {
+  font-size: 1.5rem;
+  line-height: 1.5;
+  color: black;
+  margin: 0;
+}
+.fakta-ikoner .ikon-boks p{
+  font-size: 1.7rem;
+  line-height: 1;
+  color: black;
+  margin: 0;
 }
 
 .punkt {
@@ -350,12 +368,15 @@
 }
 
 .fakta-ikoner {
+  position: absolute;
+  top: 65%;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: flex-start;
   flex-wrap: wrap;
-  gap: 60px;
+  gap: 300px;
+  bottom: 15%;
   margin: 40px 0;
   text-align: center;
 }
@@ -398,7 +419,7 @@
   left: 30px;
   width: 50px;
   height: auto;
-  z-index: 9999;
+  z-index: 1002;
   cursor: pointer;
   display: none; /* starter skjult */
 }
